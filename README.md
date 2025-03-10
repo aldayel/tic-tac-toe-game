@@ -2,8 +2,7 @@
 
 # Tic Tac Toe Game in Python with NumPy: A Battle of Wits! 🎲🧠
 ## Introduction 🌟 
-Three days ago I had a programming assignment, which was to write a code for the Sudoku game (by the way, it's my favorite game since childhood). At first, I came up with a logical solution for the game, and then I started with the programming solution. The people who gave me the assignment advised me to write the code using Python, but my stubbornness led me to decide to use Java! Of course, I couldn't, hahaha, and I turned to Python and was able to solve it later. Today, with the Tuwaiq Academy assignment in Artificial Intelligence Bootcamp, the goal is to write code for the Tic Tac Toe game using the Numpy library. I found a great similarity after looking closely at the Sudoku code I wrote a few days ago. Isn't Sudoku the Tic Tac Toe game, but it's repeated 9 times? So why don't I use the same logic?
-
+A Tuwaiq Academy assignment in Artificial Intelligence Bootcamp, the goal is to write code for the Tic Tac Toe game using the Numpy library. I found a great similarity after looking closely at how to write a code that solves Sudoku that I wrote a few days ago. Isn't Sudoku the Tic Tac Toe game, but it's repeated 9 times? So why don't I use the same logic?
 
 ## Game Rules 📜
 Here are the fundamental rules that govern this timeless game:
