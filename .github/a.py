@@ -1,117 +1,78 @@
 import numpy as np
+
+# Initialize the game 
 Matrix = np.array([["-", "-", "-"],
-                             ["-", "-", "-"],
-                             ["-", "-", "-"]])
+                   ["-", "-", "-"],
+                   ["-", "-", "-"]])
+
+# Function to display the current board state = Matrix
+def display_Matrix():
+    print("\nCurrent Board:")
+    for i in range(3):
+        print(" | ".join(Matrix[i])) 
+
+        print("-" * 9) # 9 empty indexes 
+
+# Function to check for a winer
+def check_winner():
+    # Check rows first
+    for i in range(3):
+        if Matrix[i][0] == Matrix[i][1] == Matrix[i][2] and Matrix[i][0] != "-":
+            return Matrix[i][0] 
+        # not changing the i which stands for row number and ckeck all the elemnts or boxes in the rows to check
 
 
-checker=False
-
-player1= input("make your move! ")
-player2= input("make your movie!")
-
-def player1_turn():
-    if (player1 == "1"):
-        Matrix[0] = "X"
-    elif player1 == "2":
-        Matrix[1] = "X"
-    elif player1 == "3":
-            Matrix[2] = "X"
-    elif player1 == "4":
-        Matrix[3] = "X"
-    elif player1 == "5":
-            Matrix[4] = "X"
-    elif player1 == "6":
-        Matrix[5] = "X"
-    elif player1 == "7":
-            Matrix[6] = "X"
-    elif player1 == "8":
-            Matrix[7] = "X"
-    elif player1 == "9":
-            Matrix[8] = "X"
-
-#-------------------------------------------------------
-
-def player2_turn():
-    if (player2 == "1"):
-        Matrix[0] = "O"
-    elif player2 == "2":
-        Matrix[1] = "O"
-    elif player2 == "3":
-            Matrix[2] = "O"
-    elif player2 == "4":
-        Matrix[3] = "O"
-    elif player2 == "5":
-            Matrix[4] = "O"
-    elif player2 == "6":
-        Matrix[5] = "O"
-    elif player2 == "7":
-            Matrix[6] = "O"
-    elif player2 == "8":
-            Matrix[7] = "O"
-    elif player2 == "9":
-            Matrix[8] = "O"
-
-#-------------------------------------------------------
-def checkHorizontleCondition(Matrix):
-    global winner
-    if Matrix[0] == Matrix[1] == Matrix[2] and Matrix[0] != "":
-        winner = Matrix[0]
-        return True
-    elif Matrix[3] == Matrix[4] == Matrix[5] and Matrix[3] != "":
-        winner = Matrix[3]
-        return True
-    elif Matrix[6] == Matrix[7] == Matrix[8] and Matrix[6] != "":
-        winner = Matrix[6]
-        return True
-
-#-------------------------------------------------------
-def checkColCondition(Matrix):
-    global winner
-    if Matrix[0] == Matrix[3] == Matrix[6] and Matrix[0] != "":
-        winner = Matrix[0]
-        return True
-    elif Matrix[1] == Matrix[4] == Matrix[7] and Matrix[1] != "":
-        winner = Matrix[1]
-        return True
-    elif Matrix[2] == Matrix[5] == Matrix[8] and Matrix[2] != "":
-        winner = Matrix[2]
-        return True
-#-----------------------------------------------------------    
-
- 
-def checkDiagonalCondition(Matrix):
-     global winner
-     if Matrix[0] == Matrix[4] == Matrix[8] and Matrix[0] != "":
-        winner = Matrix[0]
-        return True
-     elif Matrix[2] == Matrix[4] == Matrix[6] and Matrix[2] != "":
-        winner = Matrix[2]
-        return True
+    # Check columns, like rows 
+    for i in range(3):
+        if Matrix[0][i] == Matrix[1][i] == Matrix[2][i] and Matrix[0][i] != "-":
+            return Matrix[0][i]
     
     
+    # Check diagonals, by having two possible ways to way in diagonal way ( from left to right and from right to left)
+
+    if Matrix[0][0] == Matrix[1][1] == Matrix[2][2] and Matrix[0][0] != "-":
+        return Matrix[0][0]
+    if Matrix[0][2] == Matrix[1][1] == Matrix[2][0] and Matrix[0][2] != "-":
+        return Matrix[0][2]
     
-while (player1 <10 and palyer2<10):
-         print("palyer1 turn")
-         player1 = input("enter your choose")
-         if player1 == "1":
-              Matrix[0]= "X"
-         elif player1 == "2":
-              Matrix[1]= "X"
-         elif player1 == "3":
-              Matrix[2]= "X"
-         elif player1 == "4":
-              Matrix[3]="X"
-         elif player1 == "5":
-              Matrix[4]="X"
-         elif player1 == "6":
-              Matrix[5] = "X"
+#---------------------------------------------------
+
+# Main LOOP
+def play_game():
+    print("Tic Tac Toe!")
+    
+    for turn in range(9):  # Maximum of 9 turns, cause logically can't a player plays more than that so we have to set a boundry for this
+                            # and a player can't play two moves or more in one round >> so even number = player 1 and odd = player2
+        display_Matrix()
+        if turn % 2 == 0:
+            current_player = "X"
+            move = int(input("Player 1 X Enter your move (1-9): ")) - 1 #the main diffrence between the player aspect and the programmer aspect is the indexing in this game
+            # from player aspect the game indexing is from 1-9 unlike the programming aspect which it 0-8 ( can't skip the index 0, or to be honest i don't know )
+        else:
+            current_player = "O"
+            move = int(input("Player 2 O Enter your move (1-9): ")) - 1
+        
+        # Check if the move is valid
+        if move < 0 or move > 8 or Matrix[move // 3][move % 3] != "-": # the following "Matrix[move // 3][move % 3] != "-":" i google it and understands why it is the best approach to apply for the game case
+            print("the move is not valid")
+            continue
+        
+        # Update the board
+        Matrix[move // 3][move % 3] = current_player
 
 
+        #---------------------------------------------------
+        
+        
+        # Check for win case
+        winner = check_winner()
+        if winner:
+            display_Matrix()
+            print(f"Congratulations! Player {1 if winner == 'X' else 2} ({winner}) wins!")
+            return
+    
 
+    #---------------------------------------------------
 
-
-              
-              
-
-         
-         
+# Start the game
+    play_game()
