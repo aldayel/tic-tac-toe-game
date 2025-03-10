@@ -19,7 +19,7 @@ def check_winner():
     for i in range(3):
         if Matrix[i][0] == Matrix[i][1] == Matrix[i][2] and Matrix[i][0] != "-":
             return Matrix[i][0] 
-        # not changing the i which stands for row number and ckeck all the elemnts or boxes in the rows to check
+        # not changing the i which stands for row number and check all the elements or boxes in the rows to check
 
 
     # Check columns, like rows 
@@ -41,13 +41,13 @@ def check_winner():
 def play_game():
     print("Tic Tac Toe!")
     
-    for turn in range(9):  # Maximum of 9 turns, cause logically can't a player plays more than that so we have to set a boundry for this
+    for turn in range(9):  # Maximum of 9 turns, cause logically can't a player plays more than that so we have to set a boundary for this
                             # and a player can't play two moves or more in one round >> so even number = player 1 and odd = player2
         display_Matrix()
         if turn % 2 == 0:
             current_player = "X"
-            move = int(input("Player 1 X Enter your move (1-9): ")) - 1 #the main diffrence between the player aspect and the programmer aspect is the indexing in this game
-            # from player aspect the game indexing is from 1-9 unlike the programming aspect which it 0-8 ( can't skip the index 0, or to be honest i don't know )
+            move = int(input("Player 1 X Enter your move (1-9): ")) - 1 #the main difference between the player aspect and the programmer aspect is the indexing in this game
+            # from player aspect the game indexing is from 1-9 unlike the programming aspect which is 0-8 ( can't skip the index 0, or to be honest i don't know )
         else:
             current_player = "O"
             move = int(input("Player 2 O Enter your move (1-9): ")) - 1
@@ -60,8 +60,7 @@ def play_game():
         # Update the board
         Matrix[move // 3][move % 3] = current_player
 
-
-        #---------------------------------------------------
+  #---------------------------------------------------
         
         
         # Check for win case
