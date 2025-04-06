@@ -10,7 +10,7 @@ Here are the fundamental rules that govern this timeless game:
 - **Game Board:** The game board consists of a 3x3 grid, like a tic-tac-toe notebook.
 - **Players:** The game is typically played by two players, one using 'X' and the other 'O'.
 - **Taking Turns:** Players take turns to place their symbol on an empty cell on the grid.
-- **Winning:** The first player to form a line with their symbol wins the game. If the grid is full and no one has formed a line, the game is a draw (a "cat's game").
+- **Winning:** The first player to form a line with their symbol wins the game. If the grid is full and no one has formed a line, the game is a draw.
 - **Game Flow:** The game starts with an empty grid. Players take turns until there's a winner.
 ## Task Checklist 📋
 Here's a step-by-step breakdown of your task:
