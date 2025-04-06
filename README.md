@@ -8,7 +8,7 @@ A Tuwaiq Academy assignment in Artificial Intelligence Bootcamp, the goal is to 
 Here are the fundamental rules that govern this timeless game:
 - **Objective:** The goal is to form a line (horizontal, vertical, or diagonal) with your symbol (either 'X' or 'O') before your opponent does.
 - **Game Board:** The game board consists of a 3x3 grid, like a tic-tac-toe notebook.
-- **Players:** The game is typically played by two players, one using 'X' and the other 'O'. You can decide who plays which symbol.
+- **Players:** The game is typically played by two players, one using 'X' and the other 'O'.
 - **Taking Turns:** Players take turns to place their symbol on an empty cell on the grid.
 - **Winning:** The first player to form a line with their symbol wins the game. If the grid is full and no one has formed a line, the game is a draw (a "cat's game").
 - **Game Flow:** The game starts with an empty grid. Players take turns until there's a winner.
