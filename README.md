@@ -1,4 +1,4 @@
-# TicTacToe-Task
+# TicTacToe-Task (Tuwaiq Academy Bootcamp Task)
 
 # Tic Tac Toe Game in Python with NumPy: A Battle of Wits! 🎲🧠
 ## Introduction 🌟 
